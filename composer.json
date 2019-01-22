@@ -1,0 +1,42 @@
+{
+    "name": "raystech/mediamanager",
+    "description": "Media Manager for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Piyapan Rodkuen",
+            "email": "piyapannr@gmail.com",
+            "homepage": "http://www.raystech.github.io"
+        }
+    ],
+    "homepage": "https://github.com/raystech/laravel-mediamanager",
+    "keywords": ["Laravel", "MediaManager", "MediaLibrary"],
+    "require": {
+        "illuminate/support": "~5",
+        "intervention/image": "^2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Raystech\\MediaManager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Raystech\\MediaManager\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Raystech\\MediaManager\\MediaManagerServiceProvider"
+            ],
+            "aliases": {
+                "MediaManager": "Raystech\\MediaManager\\Facades\\MediaManager"
+            }
+        }
+    }
+}
