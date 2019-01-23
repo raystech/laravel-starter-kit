@@ -1,8 +1,8 @@
 # laravel-starter-kit
 
+[![Laravel 5.7](https://img.shields.io/badge/Laravel-5.7-blue.svg?style=flat-square)](http://laravel.com)
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -69,7 +69,6 @@ MIT. Please see the [license file](license.md) for more information.
 
 [link-packagist]: https://packagist.org/packages/raystech/laravel-starter-kit
 [link-downloads]: https://packagist.org/packages/raystech/laravel-starter-kit
-[link-travis]: https://travis-ci.org/raystech/laravel-starter-kit
 [link-code-quality]: https://scrutinizer-ci.com/g/raystech/laravel-starter-kit
 
 [link-author]: https://github.com/raystech
