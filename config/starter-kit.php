@@ -1,8 +1,13 @@
 <?php
 
 return [
-  'term_model' => Raystech\StarterKit\Models\Term::class,
-  'term_meta_model' => Raystech\StarterKit\Models\TermMeta::class,
-  'term_relationship_model' => Raystech\StarterKit\Models\TermRelationship::class,
-  'term_taxonomy_model' => Raystech\StarterKit\Models\TermTaxonomy::class
+  'models' => [
+    'term'                => Raystech\StarterKit\Models\Term::class,
+    'term_meta'           => Raystech\StarterKit\Models\TermMeta::class,
+    'term_relationship'   => Raystech\StarterKit\Models\TermRelationship::class,
+    'term_taxonomy'       => Raystech\StarterKit\Models\TermTaxonomy::class,
+
+    'tenant'              => Raystech\StarterKit\Models\Tenant::class,
+    'tenant_relationship' => Raystech\StarterKit\Models\TermRelationship::class,
+  ]
 ];
