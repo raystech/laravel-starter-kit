@@ -14,16 +14,18 @@ class StarterKitServiceProvider extends BaseServiceProvider
   public function boot()
   {
     // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'raystech');
-    $this->registerConfig();
-    // $this->loadViewsFrom(__DIR__.'/../resources/views', 'raystech');
-    $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+    
+    
+    
     // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
     $this->loadHelpers();
 
     // Publishing is only necessary when using the CLI.
     if ($this->app->runningInConsole()) {
-
+      $this->registerConfig();
+      $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+      // $this->loadViewsFrom(__DIR__.'/../resources/views', 'raystech');
       /*
       if (!class_exists('CreateStarterKitTable')) {
         $this->publishes([
