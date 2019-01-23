@@ -12,6 +12,7 @@
     "homepage": "https://github.com/raystech/laravel-starter-kit",
     "keywords": ["Laravel", "Starter", "Start", "Kit"],
     "require": {
+        "php": "^7.2",
         "illuminate/support": "~5"
     },
     "require-dev": {
@@ -20,12 +21,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Raystech\\MediaManager\\": "src/"
+            "Raystech\\StarterKit\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Raystech\\MediaManager\\Tests\\": "tests"
+            "Raystech\\StarterKit\\Tests\\": "tests",
         }
     },
     "extra": {

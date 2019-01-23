@@ -1,9 +1,9 @@
 <?php
 
-// Available placeholders: raystech, mediamanager, raystech, mediamanager
+// Available placeholders: raystech, laravel-starter-kit, raystech, laravel-starter-kit
 return [
-    'src/MyPackage.php' => 'src/mediamanager.php',
-    'config/mypackage.php' => 'config/mediamanager.php',
-    'src/Facades/MyPackage.php' => 'src/Facades/mediamanager.php',
-    'src/MyPackageServiceProvider.php' => 'src/mediamanagerServiceProvider.php',
+    'src/MyPackage.php' => 'src/starterkit.php',
+    'config/mypackage.php' => 'config/starter-kit.php',
+    'src/Facades/MyPackage.php' => 'src/Facades/starterkit.php',
+    'src/MyPackageServiceProvider.php' => 'src/StarterKitServiceProvider.php',
 ];
