@@ -14,8 +14,9 @@ class StarterKitServiceProvider extends BaseServiceProvider
   public function boot()
   {
     // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'raystech');
+    $this->registerConfig();
     // $this->loadViewsFrom(__DIR__.'/../resources/views', 'raystech');
-    // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+    $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
     $this->loadHelpers();
@@ -23,18 +24,13 @@ class StarterKitServiceProvider extends BaseServiceProvider
     // Publishing is only necessary when using the CLI.
     if ($this->app->runningInConsole()) {
 
-      // Publishing the configuration file.
-      $this->publishes([
-        __DIR__ . '/../config/starter-kit.php' => config_path('starter-kit.php'),
-      ], 'starter-kit.config');
-
-
+      /*
       if (!class_exists('CreateStarterKitTable')) {
         $this->publishes([
           __DIR__ . '/../database/migrations/create_starter_kit_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_starter_kit_table.php'),
         ], 'migrations');
       }
-/*
+
       if (!class_exists('CreateTermMetaTable')) {
         $this->publishes([
           __DIR__ . '/../database/migrations/create_term_meta_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_meta_table.php'),
@@ -52,7 +48,8 @@ class StarterKitServiceProvider extends BaseServiceProvider
           __DIR__ . '/../database/migrations/create_term_taxonomy_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_taxonomy_table.php'),
         ], 'migrations');
       }
-*/
+      */
+      
       // Publishing the views.
       /*$this->publishes([
       __DIR__.'/../resources/views' => base_path('resources/views/vendor/raystech'),
@@ -74,14 +71,28 @@ class StarterKitServiceProvider extends BaseServiceProvider
   }
 
   /**
+   * Register config.
+   *
+   * @return void
+   */
+  protected function registerConfig()
+  {
+    echo "Publishing Config ...\n";
+    // Publishing the configuration file.
+    $this->publishes([
+      __DIR__ . '/../config/starter-kit.php' => config_path('starter-kit.php'),
+    ], 'config');
+
+    $this->mergeConfigFrom(__DIR__ . '/../config/starter-kit.php', 'StarterKit');
+  }
+
+  /**
    * Register any package services.
    *
    * @return void
    */
   public function register()
   {
-    $this->mergeConfigFrom(__DIR__ . '/../config/starter-kit.php', 'StarterKit');
-
     // Register the service the package provides.
     $this->app->singleton('StarterKit', function ($app) {
       return new StarterKit;
