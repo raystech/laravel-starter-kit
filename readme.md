@@ -65,10 +65,12 @@ MIT. Please see the [license file](license.md) for more information.
 [ico-downloads]: https://img.shields.io/packagist/dt/raystech/laravel-starter-kit.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/raystech/laravel-starter-kit/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/raystech/laravel-starter-kit.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/raystech/laravel-starter-kit
 [link-downloads]: https://packagist.org/packages/raystech/laravel-starter-kit
 [link-travis]: https://travis-ci.org/raystech/laravel-starter-kit
-[link-styleci]: https://styleci.io/repos/12345678
+[link-code-quality]: https://scrutinizer-ci.com/g/raystech/laravel-starter-kit
+
 [link-author]: https://github.com/raystech
 [link-contributors]: ../../contributors]
