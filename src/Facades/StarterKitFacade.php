@@ -4,7 +4,7 @@ namespace Raystech\StarterKit\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class StarterKit extends Facade
+class StarterKitFacade extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -4,6 +4,6 @@
 return [
     'src/MyPackage.php' => 'src/starterkit.php',
     'config/mypackage.php' => 'config/starter-kit.php',
-    'src/Facades/MyPackage.php' => 'src/Facades/starterkit.php',
+    'src/Facades/MyPackage.php' => 'src/Facades/StarterKitFacade.php',
     'src/MyPackageServiceProvider.php' => 'src/StarterKitServiceProvider.php',
 ];

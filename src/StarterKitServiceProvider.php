@@ -2,9 +2,9 @@
 
 namespace Raystech\StarterKit;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class StarterKitServiceProvider extends ServiceProvider
+class StarterKitServiceProvider extends BaseServiceProvider
 {
   /**
    * Perform post-registration booting of services.
@@ -84,6 +84,8 @@ class StarterKitServiceProvider extends ServiceProvider
     $this->app->singleton('StarterKit', function ($app) {
       return new StarterKit;
     });
+
+    $this->app->alias(StarterKit::class, 'starter-kit');
   }
 
   /**
