@@ -1,8 +1,8 @@
 # laravel-starter-kit
 
-[![Laravel 5.7](https://img.shields.io/badge/Laravel-5.7-blue.svg?style=flat-square)](http://laravel.com)
+[![Build Status][ico-build]][link-build]
+[![Laravel 5.7][ico-laravel]][link-laravel]
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -61,12 +61,16 @@ If you discover any security related issues, please email piyapannr@gmail.com in
 
 MIT. Please see the [license file](license.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/raystech/laravel-starter-kit.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/raystech/laravel-starter-kit.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/raystech/laravel-starter-kit/master.svg?style=flat-square
+[ico-laravel]: https://img.shields.io/badge/Laravel-5.7-blue.svg
+[ico-build]: https://scrutinizer-ci.com/g/raystech/laravel-starter-kit/badges/build.png
+[ico-version]: https://img.shields.io/packagist/v/raystech/laravel-starter-kit.svg
+[ico-downloads]: https://img.shields.io/packagist/dt/raystech/laravel-starter-kit.svg
+[ico-travis]: https://img.shields.io/travis/raystech/laravel-starter-kit/master.svg
 [ico-styleci]: https://styleci.io/repos/12345678/shield
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/raystech/laravel-starter-kit.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/raystech/laravel-starter-kit.svg?b=master
 
+[link-laravel]: http://laravel.com
+[link-build]: https://scrutinizer-ci.com/g/raystech/laravel-starter-kit/build-status/master
 [link-packagist]: https://packagist.org/packages/raystech/laravel-starter-kit
 [link-downloads]: https://packagist.org/packages/raystech/laravel-starter-kit
 [link-code-quality]: https://scrutinizer-ci.com/g/raystech/laravel-starter-kit
