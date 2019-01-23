@@ -18,6 +18,8 @@ class StarterKitServiceProvider extends BaseServiceProvider
     // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
+    $this->loadHelpers();
+
     // Publishing is only necessary when using the CLI.
     if ($this->app->runningInConsole()) {
 
@@ -96,5 +98,11 @@ class StarterKitServiceProvider extends BaseServiceProvider
   public function provides()
   {
     return ['StarterKit'];
+  }
+
+  public function loadHelpers() {
+    foreach (glob(__DIR__ . '/Helpers/*.php') as $filename) {
+      require_once($filename);
+    }
   }
 }
