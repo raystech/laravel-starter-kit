@@ -26,12 +26,31 @@ class StarterKitServiceProvider extends ServiceProvider
         __DIR__ . '/../config/starter-kit.php' => config_path('starter-kit.php'),
       ], 'starter-kit.config');
 
-      if (!class_exists('CreateMediaTable')) {
+
+      if (!class_exists('CreateStarterKitTable')) {
         $this->publishes([
-          __DIR__ . '/../database/migrations/create_media_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_media_table.php'),
+          __DIR__ . '/../database/migrations/create_starter_kit_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_starter_kit_table.php'),
+        ], 'migrations');
+      }
+/*
+      if (!class_exists('CreateTermMetaTable')) {
+        $this->publishes([
+          __DIR__ . '/../database/migrations/create_term_meta_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_meta_table.php'),
         ], 'migrations');
       }
 
+      if (!class_exists('CreateTermRelationshipMetaTable')) {
+        $this->publishes([
+          __DIR__ . '/../database/migrations/create_term_relationship_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_relationship_table.php'),
+        ], 'migrations');
+      }
+
+      if (!class_exists('CreateTermTaxonomyMetaTable')) {
+        $this->publishes([
+          __DIR__ . '/../database/migrations/create_term_taxonomy_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_taxonomy_table.php'),
+        ], 'migrations');
+      }
+*/
       // Publishing the views.
       /*$this->publishes([
       __DIR__.'/../resources/views' => base_path('resources/views/vendor/raystech'),

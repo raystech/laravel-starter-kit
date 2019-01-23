@@ -1,6 +1,6 @@
 <?php
 
-namespace Raystech\MediaManager\Exceptions;
+namespace Raystech\StarterKit\Exceptions;
 
 use Exception;
 
