@@ -15,6 +15,22 @@ Via Composer
 $ composer require raystech/laravel-starter-kit
 ```
 
+You can publish [the migration](https://github.com/raystech/laravel-starter-kit/blob/master/database/migrations/create_starter_kit_tables.php.stub) with:
+
+```bash
+php artisan vendor:publish --provider="Raystech\StarterKit\StarterKitServiceProvider" --tag="migrations"
+```
+
+```bash
+php artisan migrate
+```
+
+You can publish the config file with:
+
+```bash
+php artisan vendor:publish --provider="Raystech\StarterKit\StarterKitServiceProvider" --tag="config"
+```
+
 ## Usage
 
 ## Change log
