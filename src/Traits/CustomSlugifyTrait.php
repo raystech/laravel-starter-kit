@@ -1,8 +1,8 @@
 <?php
 
-namespace Raystech\MediaManager\Models\Traits;
+namespace Raystech\StarterKit\Traits;
 
-trait CustomMediaProperties
+trait CustomSlugifyTrait
 {
     public function setCustomHeaders(array $customHeaders): self
     {
