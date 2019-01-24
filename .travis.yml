@@ -8,8 +8,13 @@ before_script:
   - mysql -e 'create database starterkit;'
   - composer self-update
   - composer install --no-interaction
-  - php artisan key:generate
-  - php artisan migrate
 
 script:
   - vendor/bin/phpunit
+  - php artisan key:generate
+  - php artisan migrate
+
+notifications:
+  slack:
+    on_success: never
+    on_fail: always
