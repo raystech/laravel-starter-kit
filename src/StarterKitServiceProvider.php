@@ -14,17 +14,17 @@ class StarterKitServiceProvider extends BaseServiceProvider
   public function boot()
   {
     // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'raystech');
-    // $this->loadRoutesFrom(__DIR__.'/routes.php');
-
+    $this->loadRoutesFrom(__DIR__.'/Routes/web.php');
     $this->loadHelpers();
+    $this->loadViewsFrom(__DIR__.'/Resources/views', 'rt-starter-kit');
 
     // Publishing is only necessary when using the CLI.
     if ($this->app->runningInConsole()) {
       $this->registerConfig();
       $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-      
+
       /*
-      $this->loadViewsFrom(__DIR__.'/../resources/views', 'raystech');
+      
       if (!class_exists('CreateStarterKitTable')) {
         $this->publishes([
           __DIR__ . '/../database/migrations/create_starter_kit_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_starter_kit_table.php'),
@@ -61,8 +61,8 @@ class StarterKitServiceProvider extends BaseServiceProvider
    */
   protected function registerConfig()
   {
-    echo "Publishing Config ...\n";
     // Publishing the configuration file.
+    echo "Publishing StarterKit Config ...\n";
     $this->publishes([
       __DIR__ . '/../config/starter-kit.php' => config_path('starter-kit.php'),
     ], 'config');
