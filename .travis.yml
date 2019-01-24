@@ -11,8 +11,8 @@ before_script:
 
 script:
   - vendor/bin/phpunit
-  - php artisan key:generate
-  - php artisan migrate
+  # - php artisan key:generate
+  # - php artisan migrate
 
 notifications:
   slack:
