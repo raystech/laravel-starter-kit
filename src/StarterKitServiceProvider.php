@@ -14,9 +14,6 @@ class StarterKitServiceProvider extends BaseServiceProvider
   public function boot()
   {
     // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'raystech');
-    
-    
-    
     // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
     $this->loadHelpers();
@@ -25,50 +22,35 @@ class StarterKitServiceProvider extends BaseServiceProvider
     if ($this->app->runningInConsole()) {
       $this->registerConfig();
       $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-      // $this->loadViewsFrom(__DIR__.'/../resources/views', 'raystech');
+      
       /*
+      $this->loadViewsFrom(__DIR__.'/../resources/views', 'raystech');
       if (!class_exists('CreateStarterKitTable')) {
         $this->publishes([
           __DIR__ . '/../database/migrations/create_starter_kit_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_starter_kit_table.php'),
         ], 'migrations');
       }
 
-      if (!class_exists('CreateTermMetaTable')) {
-        $this->publishes([
-          __DIR__ . '/../database/migrations/create_term_meta_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_meta_table.php'),
-        ], 'migrations');
-      }
-
-      if (!class_exists('CreateTermRelationshipMetaTable')) {
-        $this->publishes([
-          __DIR__ . '/../database/migrations/create_term_relationship_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_relationship_table.php'),
-        ], 'migrations');
-      }
-
-      if (!class_exists('CreateTermTaxonomyMetaTable')) {
-        $this->publishes([
-          __DIR__ . '/../database/migrations/create_term_taxonomy_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_term_taxonomy_table.php'),
-        ], 'migrations');
-      }
-      */
       
       // Publishing the views.
-      /*$this->publishes([
+      $this->publishes([
       __DIR__.'/../resources/views' => base_path('resources/views/vendor/raystech'),
-      ], 'starter-kit.views');*/
+      ], 'views');
 
       // Publishing assets.
-      /*$this->publishes([
+      $this->publishes([
       __DIR__.'/../resources/assets' => public_path('vendor/raystech'),
-      ], 'starter-kit.views');*/
+      ], 'assets');
 
       // Publishing the translation files.
-      /*$this->publishes([
+      $this->publishes([
       __DIR__.'/../resources/lang' => resource_path('lang/vendor/raystech'),
-      ], 'starter-kit.views');*/
+      ], 'translation');
 
       // Registering package commands.
       // $this->commands([]);
+
+      */
     }
   }
 
