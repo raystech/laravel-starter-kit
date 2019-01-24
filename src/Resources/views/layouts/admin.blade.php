@@ -12,8 +12,13 @@
 </head>
 <body>
   <div>
-    <div class="content-wrapper">
-      @yield('content')
+    <div class="page-container" id="app">
+      <div class="page-content">
+        @includeIf('rt-starter-kit::partials.sidebar')
+        <div class="content-wrapper">
+          @yield('content')
+        </div>
+      </div>
     </div>
   </div>
 </body>
