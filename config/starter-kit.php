@@ -1,6 +1,10 @@
 <?php
 
 return [
+  'routes' => [
+    'prefix' => 'admin',
+    'name_prefix' => 'rt-admin',
+  ],
   'models' => [
     'term'                => Raystech\StarterKit\Models\Term::class,
     'term_meta'           => Raystech\StarterKit\Models\TermMeta::class,
