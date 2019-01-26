@@ -83,6 +83,11 @@ class StarterKitServiceProvider extends BaseServiceProvider
     });
 
     $this->app->alias(StarterKit::class, 'starter-kit');
+
+    // Register Flash Class
+    $this->app->singleton('flash', function () {
+      return $this->app->make('Raystech\StarterKit\Supports\FlashToast');
+    });
   }
 
   /**
