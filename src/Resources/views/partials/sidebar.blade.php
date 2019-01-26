@@ -13,12 +13,12 @@
           <ul>
             <li class="{{ request()->is('backend/news*') ? 'active' : '' }}">
               <a href="{{ route(config('starter-kit.routes.name_prefix').'.posts.index') }}">
-                <i class="icon-folder-open"></i> <span>All Posts</span>
+                All Posts
               </a>
             </li>
             <li class="{{ request()->is('backend/news*') ? 'active' : '' }}">
               <a href="{{ route(config('starter-kit.routes.name_prefix').'.posts.create') }}">
-                <i class="icon-folder-open"></i> <span>Add Posts</span>
+                Add Posts
               </a>
             </li>
           </ul>

@@ -9,6 +9,10 @@
   <title>Starter Kit</title>
   <link href="{{ scontent('css/app.css') }}" rel="stylesheet">
   <link href="{{ scontent('css/styles.css') }}" rel="stylesheet">
+  <link href="{{ scontent('css/icons/icomoon/styles.css') }}" rel="stylesheet">
+
+  @section('head')
+  @show
 </head>
 <body>
   <div>
@@ -20,6 +24,13 @@
         </div>
       </div>
     </div>
+  </div>
+  <div>
+    <script src="{{ scontent('js/core/libraries/jquery.min.js') }}"></script>
+    <script src="{{ asset('scontent/js/core/app.js') }}"></script>
+    <script src="{{ scontent('js/core/libraries/bootstrap.min.js') }}"></script>
+    @section('foot')
+    @show
   </div>
 </body>
 </html>

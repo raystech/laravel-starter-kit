@@ -28,6 +28,13 @@ class PostController extends BaseController
 
   public function create(Request $request) {
     $posts = Post::orderBy('created_at')->get();
-    return view('rt-starter-kit::posts.index', compact('posts'));
+
+    flash()->success('Create Post');
+    return view('rt-starter-kit::posts.create', compact('posts'));
+  }
+
+  public function store(Request $request) {
+    dd($request->all());
+
   }
 }
