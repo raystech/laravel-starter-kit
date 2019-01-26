@@ -29,7 +29,7 @@ class PostController extends BaseController
   public function create(Request $request) {
     $posts = Post::orderBy('created_at')->get();
 
-    flash()->success('Create Post');
+    flashtoast()->success('Create Post');
     return view('rt-starter-kit::posts.create', compact('posts'));
   }
 
