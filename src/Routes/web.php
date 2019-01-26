@@ -2,8 +2,9 @@
 
 
 Route::group([
-  'prefix' => config('starter-kit.routes.prefix'),
-  'namespace' => 'Raystech\StarterKit\Http\Controllers'
+  'middleware' => 'web',
+  'prefix'     => config('starter-kit.routes.prefix'),
+  'namespace'  => 'Raystech\StarterKit\Http\Controllers'
 ], function(){
 
   Route::get('ping', function() {
