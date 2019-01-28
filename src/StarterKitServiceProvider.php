@@ -62,7 +62,7 @@ class StarterKitServiceProvider extends BaseServiceProvider
   protected function registerConfig()
   {
     // Publishing the configuration file.
-    echo "Publishing StarterKit Config ...\n";
+    // echo "Publishing StarterKit Config ...\n";
     $this->publishes([
       __DIR__ . '/../config/starter-kit.php' => config_path('starter-kit.php'),
     ], 'config');
@@ -84,9 +84,14 @@ class StarterKitServiceProvider extends BaseServiceProvider
 
     $this->app->alias(StarterKit::class, 'starter-kit');
 
-    // Register Flash Class
-    $this->app->singleton('flash', function () {
-      return $this->app->make('Raystech\StarterKit\Supports\FlashToast');
+    $this->app->bind(
+      'Raystech\StarterKit\Supports\SessionStore',
+      'Raystech\StarterKit\Supports\LaravelSessionStore'
+    );
+
+    // Register Flash Toast
+    $this->app->singleton('flashtoast', function () {
+      return $this->app->make('RaysTech\StarterKit\Supports\FlashToast');
     });
   }
 
