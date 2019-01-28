@@ -3,7 +3,7 @@
 
 Route::group([
   'middleware' => 'web',
-  'prefix'     => config('starter-kit.routes.prefix'),
+  'prefix'     => config('starter-kit.routes.prefix', 'rt-admin'),
   'namespace'  => 'Raystech\StarterKit\Http\Controllers'
 ], function(){
 
@@ -13,5 +13,6 @@ Route::group([
     return 'received';
   });
 
-  Route::resource('posts','PostController', [ 'as' => config('starter-kit.routes.name_prefix') ]);
+  Route::resource('posts','PostController', [ 'as' => config('starter-kit.routes.name_prefix', 'rt-admin') ]);
+  Route::resource('terms','TermController', [ 'as' => config('starter-kit.routes.name_prefix', 'rt-admin') ]);
 });
