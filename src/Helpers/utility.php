@@ -1,5 +1,6 @@
 <?php
 
+
 if (! function_exists('flashtoast')) {
     /**
      * Arrange for a flash message.
@@ -16,6 +17,23 @@ if (! function_exists('flashtoast')) {
         }
         return $notifier;
     }
+  }
+
+if (!function_exists('menuIsRoute')) {
+  function menuIsRoute($route, $active_class = 'active') {
+    $curr_route = Route::currentRouteName();
+    if($route == $curr_route) {
+      return $active_class;
+    }
+  }
+}
+
+if (!function_exists('urlDoesContainParam')) {
+  function urlDoesContainParam($param_name, $param_value = true, $active_class = 'active') {
+    if(request()->get($param_name) == $param_value) {
+      return $active_class;
+    }
+  }
 }
 
 /**

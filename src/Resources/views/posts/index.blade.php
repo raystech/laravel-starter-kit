@@ -29,7 +29,7 @@
           @foreach($posts as $i => $post)
           <tr>
             <td>{{ $i+1 }}</td>
-            <td>{{ $post->post_title }}</td>
+            <td><a href="{{ route(config('starter-kit.routes.name_prefix', 'rt-admin').'.posts.show', $post->id) }}">{{ $post->post_title }}</a></td>
             <td>{{ optional($post->author)->name }}</td>
             <td>{{ $post->categories }}</td>
             <td></td>

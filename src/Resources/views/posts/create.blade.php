@@ -1,7 +1,7 @@
 @extends('rt-starter-kit::layouts.admin')
 
 @section('head')
-<link href="{{ scontent('css/bootstrap-select.min.css') }}" rel="stylesheet">
+<link href="{{ scontent('starterkit/css/bootstrap-select.min.css') }}" rel="stylesheet">
 
 @endsection
 @section('content')
@@ -15,7 +15,7 @@
     </div>
   </div>
   <hr class="mt-0">
-  <form action="{{route(config('starter-kit.routes.name_prefix').'.posts.store')}}" method="post">
+  <form action="{{route(config('starter-kit.routes.name_prefix', 'rt-admin').'.posts.store')}}" method="post">
     @csrf
     <div class="row">
       <div class="column col-lg-9 is-three-quarters-tablet">
@@ -69,10 +69,10 @@
 @section('foot')
 
 <!-- include summernote css/js -->
-<link href="{{ scontent('plugins/summernote/summernote-bs4.css') }}" rel="stylesheet">
-<script src="{{ scontent('plugins/summernote/summernote-bs4.min.js') }}"></script>
-<script src="{{ scontent('js/plugins/ui/moment/moment.min.js') }}"></script>
-<script src="{{ scontent('js/plugins/pickers/daterangepicker.js') }}"></script>
+<link href="{{ scontent('starterkit/summernote/summernote-bs4.css') }}" rel="stylesheet">
+<script src="{{ scontent('starterkit/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ scontent('starterkit/js/moment.min.js') }}"></script>
+<script src="{{ scontent('starterkit/js/daterangepicker.js') }}"></script>
 
 <script type="text/javascript">
   $(function() {
@@ -91,7 +91,7 @@
   })
 </script>
 
-<script src="{{ scontent('js/plugins/forms/selects/bootstrap_select.min.js') }}"></script>
+<script src="{{ scontent('starterkit/js/bootstrap_select.min.js') }}"></script>
 <script type="text/javascript">
   $(function() {
     // Single picker
