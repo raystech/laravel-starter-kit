@@ -15,7 +15,7 @@
     </div>
   </div>
   <hr class="mt-0">
-  <form action="{{route(config('starter-kit.routes.name_prefix').'.posts.store')}}" method="post">
+  <form action="{{route(config('starter-kit.routes.name_prefix', 'rt-admin').'.posts.store')}}" method="post">
     @csrf
     <div class="row">
       <div class="column col-lg-9 is-three-quarters-tablet">
