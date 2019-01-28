@@ -26,6 +26,9 @@
         
         @include('rt-starter-kit::partials.sidebar')
         <div class="content-wrapper">
+          <div class="content pb-0">
+          {{ Breadcrumbs::render() }}
+          </div>
           @yield('content')
         </div>
       </div>

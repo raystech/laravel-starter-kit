@@ -6,7 +6,6 @@
 @endsection
 @section('content')
 <div class="content">
-  {{ Breadcrumbs::render('add-property') }}
   <div class="columns mt-10 mb-0">
     <div class="column">
       <h1 class="title">Add New Post</h1>
