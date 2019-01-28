@@ -15,4 +15,5 @@ Route::group([
 
   Route::resource('posts','PostController', [ 'as' => config('starter-kit.routes.name_prefix', 'rt-admin') ]);
   Route::resource('terms','TermController', [ 'as' => config('starter-kit.routes.name_prefix', 'rt-admin') ]);
+
 });

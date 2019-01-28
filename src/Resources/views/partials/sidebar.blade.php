@@ -1,6 +1,5 @@
 <div class="sidebar sidebar-main">
   <div class="sidebar-content">
-
     <!-- User menu -->
     <div class="sidebar-user">
       <div class="category-content">
