@@ -29,10 +29,24 @@ if (!function_exists('menuIsRoute')) {
 }
 
 if (!function_exists('urlDoesContainParam')) {
-  function urlDoesContainParam($param_name, $param_value = true, $active_class = 'active') {
-    if(request()->get($param_name) == $param_value) {
-      return $active_class;
+  function urlDoesContainParam($param_name, $param_value = true, $match = 'equal', $active_class = 'active') {
+    switch ($match) {
+      case 'equal':
+          if(request()->get($param_name) == $param_value) {
+            return $active_class;
+          }
+        break;
+      case 'not':
+          if(request()->get($param_name) != $param_value) {
+            return $active_class;
+          }
+        break;
+      
+      default:
+        # code...
+        break;
     }
+    
   }
 }
 
