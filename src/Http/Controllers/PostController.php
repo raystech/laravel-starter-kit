@@ -64,9 +64,9 @@ class PostController extends BaseController
     return redirect()->route('posts.edit', $post->id);
   }
 
-  public function show($id)
+  public function show(Post $post)
   {
-    $post = Post::findOrFail($id);
+    // $post = Post::findOrFail($id);
     return view('rt-starter-kit::posts.show', compact(['post']));
   }
 
