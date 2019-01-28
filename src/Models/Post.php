@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 
 use Raystech\StarterKit\Traits\CustomSlugify;
+use Raystech\StarterKit\Traits\TimeHelperTraits;
 
 class Post extends Model
 {
   use CustomSlugify;
   use Sluggable;
+  use TimeHelperTraits;
 
   protected $fillable = [
     'post_author', 'post_content', 'post_title', 
@@ -18,6 +20,18 @@ class Post extends Model
     'post_name', 'to_ping', 'pinged',
     'post_content_filtered', 'post_parent', 'guid', 'menu_order', 'post_type', 'post_mime_type', 'comment_count'
   ];
+
+  public function getAuthorName() {
+    if($this->author) {
+      return $this->author->name;
+    } else {
+      return 'Unknown';
+    }
+  }
+
+  public function author() {
+    return $this->belongsTo('App\User', 'post_author');
+  }
   
   public static function boot()
   {
