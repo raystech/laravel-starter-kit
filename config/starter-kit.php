@@ -2,6 +2,7 @@
 
 return [
   'routes' => [
+    'enable' => false,
     'prefix' => 'admin',
     'name_prefix' => 'rt-admin',
   ],
