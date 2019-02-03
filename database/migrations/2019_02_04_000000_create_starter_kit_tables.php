@@ -69,8 +69,8 @@ class CreateStarterKitTables extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('tentans');
-      Schema::dropIfExists('tentan_relationships');
+      Schema::dropIfExists('tenants');
+      Schema::dropIfExists('tenant_relationships');
 
       Schema::dropIfExists('terms');
       Schema::dropIfExists('term_metas');
