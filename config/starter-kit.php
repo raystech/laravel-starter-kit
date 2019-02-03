@@ -3,7 +3,7 @@
 return [
   'routes' => [
     'enable' => false,
-    'prefix' => 'admin',
+    'prefix' => 'rt-admin',
     'name_prefix' => 'rt-admin',
   ],
   'models' => [
