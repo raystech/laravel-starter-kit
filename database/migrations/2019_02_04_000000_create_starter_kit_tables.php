@@ -21,18 +21,18 @@ class CreateStarterKitTables extends Migration
       });
 
       Schema::create('tenant_relationships', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('model_type');
-            $table->integer('model_id')->unsigned()->default(0);
-            $table->integer('tenant_id')->unsigned()->default(0);
-            $table->timestamps();
-        });
+        $table->increments('id');
+        $table->string('model_type');
+        $table->integer('model_id')->unsigned()->default(0);
+        $table->integer('tenant_id')->unsigned()->default(0);
+        $table->timestamps();
+      });
 
       Schema::create('terms', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('object_id')->unsigned()->default(0);
-        $table->integer('term_taxonomy_id')->unsigned()->default(0);
-        $table->integer('term_order')->default(0);
+        $table->string('name')->index();
+        $table->string('slug')->unique();
+        $table->integer('term_group')->default(0);
         $table->timestamps();
       });
 
