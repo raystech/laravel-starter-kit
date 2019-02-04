@@ -7,6 +7,37 @@ use Carbon\Carbon;
 trait TimeHelperTraits
 {
 
+  public function getThaiMonth() {
+    try {
+      $date = Carbon::parse($this->updated_at);
+    }
+    catch (\Exception $err) {
+      $date = Carbon::now();
+    }
+
+    $month_th = [
+      "",
+      "มกราคม",
+      "กุมภาพันธ์",
+      "มีนาคม",
+      "เมษายน",
+      "พฤษภาคม",
+      "มิถุนายน",
+      "กรกฎาคม",
+      "สิงหาคม",
+      "กันยายน",
+      "ตุลาคม",
+      "พฤศจิกายน",
+      "ธันวาคม",
+    ];
+    $month_index = $date->month;
+
+    if (isset($month_th[$month_index])) {
+      return $month_th[$month_index];
+    }
+    return '';
+  }
+
   public function ago()
   {
     if(!$this->created_at) {
