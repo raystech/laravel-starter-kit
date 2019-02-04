@@ -14,7 +14,9 @@ class StarterKitServiceProvider extends BaseServiceProvider
   public function boot()
   {
     // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'raystech');
-    $this->loadRoutesFrom(__DIR__.'/Routes/web.php');
+    if(config('starter-kit.routes.enable', false)) {
+      $this->loadRoutesFrom(__DIR__.'/Routes/web.php');
+    }
     $this->loadHelpers();
     $this->loadViewsFrom(__DIR__.'/Resources/views', 'rt-starter-kit');
 
