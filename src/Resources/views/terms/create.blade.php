@@ -1,6 +1,5 @@
 
-{{-- <script src="https://cdn.ckeditor.com/4.9.2/standard-all/ckeditor.js"></script> --}}
-<script src="{{scontent('js/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('js/ckeditor/ckeditor.js')}}"></script>
 
   <div class="panel panel-default">
     <div class="panel-heading pt-2 pb-2">

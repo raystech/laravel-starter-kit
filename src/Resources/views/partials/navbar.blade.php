@@ -113,7 +113,7 @@
 
             <ul class="media-list dropdown-content-body width-300">
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading text-semibold">Jordana Ansley</a>
                   <span class="display-block text-muted text-size-small">Lead web developer</span>
@@ -122,7 +122,7 @@
               </li>
 
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading text-semibold">Will Brason</a>
                   <span class="display-block text-muted text-size-small">Marketing manager</span>
@@ -131,7 +131,7 @@
               </li>
 
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading text-semibold">Hanna Walden</a>
                   <span class="display-block text-muted text-size-small">Project manager</span>
@@ -140,7 +140,7 @@
               </li>
 
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading text-semibold">Dori Laperriere</a>
                   <span class="display-block text-muted text-size-small">Business developer</span>
@@ -149,7 +149,7 @@
               </li>
 
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading text-semibold">Vanessa Aurelius</a>
                   <span class="display-block text-muted text-size-small">UX expert</span>
@@ -182,7 +182,7 @@
             <ul class="media-list dropdown-content-body">
               <li class="media">
                 <div class="media-left">
-                  <img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt="">
+                  <img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt="">
                   <span class="badge bg-danger-400 media-badge">5</span>
                 </div>
 
@@ -198,7 +198,7 @@
 
               <li class="media">
                 <div class="media-left">
-                  <img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt="">
+                  <img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt="">
                   <span class="badge bg-danger-400 media-badge">4</span>
                 </div>
 
@@ -213,7 +213,7 @@
               </li>
 
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading">
                     <span class="text-semibold">Jeremy Victorino</span>
@@ -225,7 +225,7 @@
               </li>
 
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading">
                     <span class="text-semibold">Beatrix Diaz</span>
@@ -237,7 +237,7 @@
               </li>
 
               <li class="media">
-                <div class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
+                <div class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></div>
                 <div class="media-body">
                   <a href="#" class="media-heading">
                     <span class="text-semibold">Richard Vango</span>
@@ -257,7 +257,7 @@
 
         <li class="dropdown dropdown-user">
           <a class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{ scontent('images/placeholder.jpg') }}" alt="">
+            <img src="{{ asset('images/placeholder.jpg') }}" alt="">
             <span>Victoria</span>
             <i class="caret"></i>
           </a>
@@ -285,7 +285,7 @@
       <span class="logo-lg"><b>Admin</b>LTE</span>
     </a>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><img src="{{asset('scontent/images/rt_logo.png')}}" width="auto" height="28"></a>
+    <a class="navbar-brand" href="#"><img src="{{asset('asset/images/rt_logo.png')}}" width="auto" height="28"></a>
     @if (Request::segment(1) == "manage")
     <a class="navbar-item is-hidden-desktop" id="admin-slideout-button">
       <span class="icon">

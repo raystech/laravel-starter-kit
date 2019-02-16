@@ -9,10 +9,10 @@ class TermTaxonomy extends Model
   protected $fillable = ['term_id', 'taxonomy', 'description', 'parent', 'count'];
 
   public function term() {
-  	return $this->hasOne('App\Models\Term', 'id', 'term_id');
+  	return $this->hasOne('Raystech\StarterKit\Models\Term', 'id', 'term_id');
   }
 
   public function childs() {
-  	return $this->hasMany('App\Models\TermTaxonomy', 'parent', 'term_id');
+  	return $this->hasMany('Raystech\StarterKit\Models\TermTaxonomy', 'parent', 'term_id');
   }
 }
