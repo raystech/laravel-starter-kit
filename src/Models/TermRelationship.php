@@ -14,4 +14,8 @@ class TermRelationship extends Model
   public function taxonomy() {
     return $this->hasOne('Raystech\StarterKit\Models\TermTaxonomy', 'term_taxonomy_id');
   }
+
+  public function post() {
+    return $this->hasOne('Raystech\StarterKit\Models\Post', 'model_id');
+  }
 }
