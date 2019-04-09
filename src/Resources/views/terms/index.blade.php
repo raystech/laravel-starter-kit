@@ -22,7 +22,7 @@
                 <tr>
                   <td>{{ $i+1 }}</td>
                   <td>
-                    <a href="{{route('structures.index', ['term_id'=> $term->term_id])}}">{{ $term->term->name }}</a>
+                    <a href="{{route(config('starter-kit.routes.name_prefix', 'rt-admin').'.terms.index', ['term_id'=> $term->term_id])}}">{{ $term->term->name }}</a>
                   </td>
                   <td>{{ $term->term->slug }}</td>
                   <td>

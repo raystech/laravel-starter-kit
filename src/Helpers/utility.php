@@ -1,5 +1,25 @@
 <?php
 
+if (!function_exists('option')) {
+
+  function option($key, $default = null)
+  {
+    if (is_null($key)) {
+      return new \Raystech\StarterKit\Models\Option();
+    }
+
+    if (is_array($key)) {
+      return \Raystech\StarterKit\Models\Option::set($key[0], $key[1]);
+    }
+
+    if(request()->has('t')) {
+      var_dump($site_domain);
+    }
+
+    $value = \Raystech\StarterKit\Models\Option::get($key);
+    return is_null($value) ? value($default) : $value;
+  }
+}
 
 if (! function_exists('flashtoast')) {
     /**

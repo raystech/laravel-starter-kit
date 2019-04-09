@@ -4,7 +4,7 @@
     <div class="sidebar-user">
       <div class="category-content">
         <div class="media">
-          <a href="#" class="media-left"><img src="{{ scontent('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></a>
+          <a href="#" class="media-left"><img src="{{ asset('images/placeholder.jpg') }}" class="img-circle img-sm" alt=""></a>
           <div class="media-body">
             <span class="media-heading text-semibold">{{ Auth::user()->name }}</span>
             <div class="text-size-mini text-muted">
@@ -46,7 +46,7 @@
               <i class="icon-stack2"></i> <span>Structure</span>
             </a>
           </li>
-          <li class="{{navHasSegment('structures', 2)}}">
+          <li class="">
             <a class="has-ul" href="#">
               <i class="icon-office"></i><span>Properties</span>
             </a>
@@ -89,22 +89,22 @@
             </ul>
           </li>
           <li>
-            <a class="has-ul {{navHasSegment(['dashboard', 'posts'], 2)}}" href="#">
+            <a class="has-ul" href="#">
               <i class="icon-stack2"></i><span>General</span>
             </a>
             <ul>
               <li>
-                <a class="{{navIsRoute('manage.dashboard')}}" href="{{route('manage.dashboard')}}">
+                <a class="" href="">
                   Dashboard
                 </a>
               </li>
               <li>
-                <a class="{{navIsResource('posts', 2)}}" href="{{route('posts.index')}}">
+                <a class="" href="">
                   Posts
                 </a>
               </li>
               <li>
-                <a class="{{navIsResource('properties', 2)}}" href="{{route('properties.index')}}">
+                <a class="" href="">
                   Properties
                 </a>
               </li>
@@ -114,24 +114,24 @@
             <span>Administration</span>
           </li>
           <li>
-            <a class="{{navIsResource('users')}}" href="{{route('users.index')}}">
+            <a class="" href="">
               Manage Users
             </a>
           </li>
           <li>
-            <a class="has-ul {{navHasSegment(['roles', 'permissions'], 2)}}" href="#">
+            <a class="has-ul" href="#">
               <span>
                 Roles & Permissions
               </span>
             </a>
             <ul>
               <li>
-                <a class="{{navIsResource('roles')}}" href="{{route('roles.index')}}">
+                <a class="" href="">
                   Roles
                 </a>
               </li>
               <li>
-                <a class="{{navIsResource('permissions')}}" href="{{route('permissions.index')}}">
+                <a class="" href="">
                   Permissions
                 </a>
               </li>

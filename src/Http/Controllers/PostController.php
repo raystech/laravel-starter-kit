@@ -22,6 +22,10 @@ class PostController extends BaseController
   const DELETE_MESSAGE = 'Deleted Successfully!';
   const UPDATE_MESSAGE = 'Updated Successfully!';
 
+  public function __construct() {
+    // return '__construct';
+  }
+
   public function index() {
     // return self::ADD_MESSAGE;
     $posts = Post::orderBy('created_at')->get();
