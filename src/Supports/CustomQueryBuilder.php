@@ -16,10 +16,12 @@ class CustomQueryBuilder
       'match'    => 'or', 
     ];
 
-    foreach ($data_filters as $filter) {
-      $filter_prep['column'] = $filter;
-      $filter_prep['query_1'] = $keyword;
-      $this->makeFilter($query, $filter_prep);
+    if(!is_null($keyword)) {
+      foreach ($data_filters as $filter) {
+        $filter_prep['column'] = $filter;
+        $filter_prep['query_1'] = $keyword;
+        $this->makeFilter($query, $filter_prep);
+      }
     }
 
     if(isset($data['f'])) {
