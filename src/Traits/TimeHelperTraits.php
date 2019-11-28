@@ -9,7 +9,11 @@ trait TimeHelperTraits
 
   public function getThaiMonth() {
     try {
-      $date = Carbon::parse($this->updated_at);
+      if($this->bill_date == null) {
+        $date = Carbon::parse($this->updated_at);
+      } else {
+        $date = Carbon::parse($this->bill_date);
+      }
     }
     catch (\Exception $err) {
       $date = Carbon::now();
