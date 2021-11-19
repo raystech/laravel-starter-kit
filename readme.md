@@ -55,7 +55,14 @@ protected $meta_primary_key = 'id';
 protected $meta_key_name    = 'meta_key';
 protected $meta_value_name  = 'meta_value';
 ```
+Use CustomCounter for id as uuid.
+use with option model.
 
+```php
+use Raystech\StarterKit\Traits\CustomCounter;
+
+user CustomCounter
+```
 
 ## Change log
 
