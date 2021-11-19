@@ -11,16 +11,6 @@ class CreateStarterKitTables extends Migration
      */
     public function up()
     {
-
-      Schema::create('metas', function (Blueprint $table) {
-        $table->id();
-        $table->string('model_type');
-        $table->integer('model_id');
-        $table->string('meta_key')->nullable();
-        $table->longText('meta_value')->nullable();
-        $table->timestamps();
-      });
-
       Schema::create('tenants', function (Blueprint $table) {
         $table->id();
         $table->string('tenant_name');
@@ -78,8 +68,6 @@ class CreateStarterKitTables extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('metas');
-
       Schema::dropIfExists('tenants');
       Schema::dropIfExists('tenant_relationships');
       
