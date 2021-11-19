@@ -36,16 +36,24 @@ php artisan vendor:publish --provider="Raystech\StarterKit\StarterKitServiceProv
 
 In model 
 
-```bash
+```php
 use Raystech\StarterKit\Traits\CustomSlugify;
 use Raystech\StarterKit\Traits\DataViewer;
 use Raystech\StarterKit\Traits\HasMeta;
 use Raystech\StarterKit\Traits\HasTenant;
 ```
 
-```bash
+```php
 use HasMeta,
     CustomSlugify;
+```
+
+```php
+protected $meta_model       = 'App\Models\Meta';
+protected $meta_foreign_key = 'model_id';
+protected $meta_primary_key = 'id';
+protected $meta_key_name    = 'meta_key';
+protected $meta_value_name  = 'meta_value';
 ```
 
 
