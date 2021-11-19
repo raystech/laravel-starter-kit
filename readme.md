@@ -1,6 +1,6 @@
 # laravel-starter-kit
 
-[![Laravel 5.7][ico-laravel]][link-laravel]
+[![Laravel 7.29][ico-laravel]][link-laravel]
 [![Build Status][ico-build]][link-build]
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Quality Score][ico-code-quality]][link-code-quality]
@@ -33,6 +33,21 @@ php artisan vendor:publish --provider="Raystech\StarterKit\StarterKitServiceProv
 ```
 
 ## Usage
+
+In model 
+
+```bash
+use Raystech\StarterKit\Traits\CustomSlugify;
+use Raystech\StarterKit\Traits\DataViewer;
+use Raystech\StarterKit\Traits\HasMeta;
+use Raystech\StarterKit\Traits\HasTenant;
+```
+
+```bash
+use HasMeta,
+    CustomSlugify;
+```
+
 
 ## Change log
 

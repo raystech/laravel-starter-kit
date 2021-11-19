@@ -12,8 +12,17 @@ class CreateStarterKitTables extends Migration
     public function up()
     {
 
+      Schema::create('metas', function (Blueprint $table) {
+        $table->id();
+        $table->string('model_type');
+        $table->integer('model_id');
+        $table->string('meta_key')->nullable();
+        $table->longText('meta_value')->nullable();
+        $table->timestamps();
+      });
+
       Schema::create('tenants', function (Blueprint $table) {
-        $table->increments('id');
+        $table->id();
         $table->string('tenant_name');
         $table->string('tenant_domain');
         $table->string('tenant_description')->nullable()->defaul(null);
@@ -21,7 +30,7 @@ class CreateStarterKitTables extends Migration
       });
 
       Schema::create('tenant_relationships', function (Blueprint $table) {
-        $table->increments('id');
+        $table->id();
         $table->string('model_type');
         $table->integer('model_id')->unsigned()->default(0);
         $table->integer('tenant_id')->unsigned()->default(0);
@@ -29,7 +38,7 @@ class CreateStarterKitTables extends Migration
       });
 
       Schema::create('terms', function (Blueprint $table) {
-        $table->increments('id');
+        $table->id();
         $table->string('name')->index();
         $table->string('slug')->unique();
         $table->integer('term_group')->default(0);
@@ -37,7 +46,7 @@ class CreateStarterKitTables extends Migration
       });
 
       Schema::create('term_metas', function (Blueprint $table) {
-        $table->increments('id');
+        $table->id();
         $table->unsignedBigInteger('term_id')->default(0);
         $table->string('meta_key')->nullable()->default(null);
         $table->longText('meta_value')->nullable()->default(null);
@@ -45,7 +54,7 @@ class CreateStarterKitTables extends Migration
       });
 
       Schema::create('term_taxonomies', function (Blueprint $table) {
-        $table->increments('id');
+        $table->id();
         $table->unsignedBigInteger('term_id')->default(0);
         $table->string('taxonomy', 32);
         $table->longText('description')->nullable()->default(null);
@@ -55,7 +64,7 @@ class CreateStarterKitTables extends Migration
       });
 
       Schema::create('term_relationships', function (Blueprint $table) {
-        $table->increments('id');
+        $table->id();
         $table->string('model_type')->nullable()->default(null);
         $table->unsignedInteger('model_id')->default(0);
         $table->unsignedInteger('term_taxonomy_id')->default(0);
@@ -69,9 +78,11 @@ class CreateStarterKitTables extends Migration
      */
     public function down()
     {
+      Schema::dropIfExists('metas');
+
       Schema::dropIfExists('tenants');
       Schema::dropIfExists('tenant_relationships');
-
+      
       Schema::dropIfExists('terms');
       Schema::dropIfExists('term_metas');
       Schema::dropIfExists('term_taxonomies');
