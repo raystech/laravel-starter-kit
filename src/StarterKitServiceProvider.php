@@ -23,7 +23,15 @@ class StarterKitServiceProvider extends BaseServiceProvider
     // Publishing is only necessary when using the CLI.
     if ($this->app->runningInConsole()) {
       $this->registerConfig();
-      $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+      // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+      // Export the migration
+      if (! class_exists('CreateOptionsTable')) {
+        $this->publishes([
+          __DIR__ . '/../database/migrations/create_options_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_options_table.php'),
+          // you can add any number of migrations here
+        ], 'migrations-options');
+      }
 
       /*
       

@@ -3,16 +3,17 @@
 namespace Raystech\StarterKit\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
+// use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Support\Facades\Cache;
 
 use Raystech\StarterKit\Traits\CustomSlugify;
 use Raystech\StarterKit\Traits\TimeHelperTraits;
 
 class Option extends Model
 {
-  protected $fillable = ['option_name', 'option_value', 'option_type', 'autoload', 'tenant_id'];
+  protected $fillable = ['option_name', 'option_value', 'option_type', 'autoload'];
   protected static $cacheTime = 60*24;
-  private static $tenant_id = 1;
+  // private static $tenant_id = 1;
 
   public function tenant() {
     return $this->belongsTo('App\Models\Tenant', 'tenant_id');
@@ -27,18 +28,21 @@ class Option extends Model
     return self::create(['option_name' => $key, 'option_value' => $val, 'option_type' => $type]) ? $val : false;
   }
 
-  public static function get($key, $tenant_id = 1, $default = null)
+  public static function get($key, $default = null)
   {
     // Cache::clear();
     if (self::has($key)) {
-      // $option = self::getAllSettings()->where('option_name', $key)->first();
+      /*
+      $option = self::getAllSettings()->where('option_name', $key)->first();
       self::$tenant_id = $tenant_id;
 
-      // $option = Cache::tags('options')
-      //   ->remember("option_{$tenant_id}_{$key}", static::$cacheTime, function() use ($key) {
-      //   return self::getAllSettings()->where('option_name', $key)->first();
-      // });
-      $option = Cache::rememberForever("option_{$tenant_id}_{$key}", function() use ($key) {
+      $option = Cache::tags('options')
+        ->remember("option_{$tenant_id}_{$key}", static::$cacheTime, function() use ($key) {
+        return self::getAllSettings()->where('option_name', $key)->first();
+      });
+      */
+
+      $option = Cache::rememberForever("option_{$key}", function() use ($key) {
         return self::getAllSettings()->where('option_name', $key)->first();
       });
       return self::castValue($option->option_value, $option->type);
@@ -47,9 +51,13 @@ class Option extends Model
     return self::getDefaultValue($key, $default);
   }
 
-  public static function set($key, $val, $type = 'string')
+  public static function set($key, $val, $type = null)
   {
+    if(is_null($type)) {
+      $type = gettype($val);
+    }
     if ($option = self::getAllSettings()->where('option_name', $key)->first()) {
+      Cache::forget("option_{$key}");
       return $option->update([
         'option_name' => $key,
         'option_value'  => $val,
@@ -127,6 +135,6 @@ class Option extends Model
 
   public static function getAllSettings()
   {
-    return self::where('tenant_id', self::$tenant_id)->get();
+    return self::all();
   }
 }
