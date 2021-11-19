@@ -13,9 +13,8 @@
     "keywords": ["Laravel", "Starter", "Start", "Kit"],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.1.3",
-        "illuminate/support": "~5",
-        "cviebrock/eloquent-sluggable": "^4.6"
+        "php": "^7.2.5|^8.0",
+        "laravel/framework": "^7.29",
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0",
