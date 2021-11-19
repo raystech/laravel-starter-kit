@@ -14,9 +14,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.2.5|^8.0",
-        "laravel/framework": "7.2.*",
-        // "illuminate/support": "~5",
-        // "cviebrock/eloquent-sluggable": "^4.6"
+        "laravel/framework": "7.2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0",
