@@ -4,7 +4,7 @@ namespace Raystech\StarterKit\Exceptions;
 
 use Exception;
 
-class TenantException extends Exception
+class TermException extends Exception
 {
 
   public static function fileDoesNotExist(string $path)
